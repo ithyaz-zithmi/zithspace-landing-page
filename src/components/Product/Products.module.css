@@ -32,7 +32,7 @@
 
 .brandTitle {
   font-size: 58px;
-  color: #2D5BFF;
+  color: #2d5bff;
   font-weight: 800;
   margin: 0;
 }
@@ -55,8 +55,8 @@
   margin-top: 35px;
   padding: 14px 40px;
   background: transparent;
-  border: 2px solid #2D5BFF;
-  color: #2D5BFF;
+  border: 2px solid #2d5bff;
+  color: #2d5bff;
   border-radius: 50px;
   font-weight: 700;
   cursor: pointer;
@@ -64,7 +64,7 @@
 }
 
 .exploreButton:hover {
-  background: #2D5BFF;
+  background: #2d5bff;
   color: #fff;
 }
 
@@ -75,7 +75,7 @@
   height: 100%;
 
   /* dynamic accent color */
-  --accent-color: #A855F7;
+  --accent-color: #a855f7;
 }
 
 /* ================== DASHBOARD IMAGE ================== */
@@ -94,7 +94,9 @@
   /* Changed from solid #eee */
 
   z-index: 6;
-  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+  transition:
+    box-shadow 0.6s ease,
+    border-color 0.6s ease;
 
   box-shadow: -25px 0 60px color-mix(in srgb, var(--accent-color) 45%, transparent);
 }
@@ -138,29 +140,28 @@
 
 /* Icon colors */
 .posPurple .iconBox {
-  background: #A855F7;
+  background: #a855f7;
 }
 
 .posGreen .iconBox {
-  background: #22C55E;
+  background: #22c55e;
 }
 
 .posOrange .iconBox {
-  background: #F97316;
+  background: #f97316;
 }
 
 .posbule .iconBox {
   background: #08a6ef;
 }
 
-
 /* Position 4: Blue (Bottom Left) -> Go Right then Up */
 .posbule::after {
-  content: "";
+  content: '';
   position: absolute;
 
-  left: 48px;      /* from right edge of icon */
-  top: -30px;      /* move curve upward */
+  left: 48px; /* from right edge of icon */
+  top: -30px; /* move curve upward */
 
   width: 90px;
   height: 60px;
@@ -177,7 +178,6 @@
 .posbule.active::after {
   opacity: 1;
 }
-
 
 /* ================== CURVED LINES (Side View) ================== */
 /* We replace simple lines with specific curved paths for each position */
@@ -200,7 +200,7 @@
 /* Position 1: Purple (Top Left) -> Go Right then Down */
 /* Icon is 50x50. Start from Right Edge (left: 50px), Vertical Center (top: 25px) */
 .posPurple::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 25px;
   /* Center Y */
@@ -210,8 +210,8 @@
   height: 60px;
 
   /* Path: Right -> Curve Down */
-  border-top: 2px dashed #A855F7;
-  border-right: 2px dashed #A855F7;
+  border-top: 2px dashed #a855f7;
+  border-right: 2px dashed #a855f7;
   border-radius: 0 20px 0 0;
 
   transform: none;
@@ -231,7 +231,7 @@
 /* Use iconBox relative? No, use left/top on wrapper. Wrapper is positioned absolute. */
 /* Safe bet: Start from Center (25px, 25px) and move -25px left */
 .posGreen::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 25px;
   /* Center Y */
@@ -256,7 +256,7 @@
   width: 2px;
   height: 50px;
   border: none;
-  border-left: 2px dashed #22C55E;
+  border-left: 2px dashed #22c55e;
   /* Vertical Line */
   border-radius: 0;
 
@@ -273,7 +273,7 @@
 /* Position 3: Orange (Bottom Left) -> Go Right then Up */
 /* Icon (50x50). Start from Right Edge (left: 48px), Center Y (25px) */
 .posOrange::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 25px;
   /* Center Y */
@@ -292,9 +292,9 @@
 
   top: -25px;
 
-  border-bottom: 2px dashed #F97316;
+  border-bottom: 2px dashed #f97316;
   /* horizontal part at bottom of box (aligns with icon center) */
-  border-right: 2px dashed #F97316;
+  border-right: 2px dashed #f97316;
   /* vertical up */
   border-radius: 0 0 20px 0;
   /* Curve at bottom-right of box */
@@ -308,7 +308,6 @@
 .posOrange.active::after {
   opacity: 1;
 }
-
 
 /* Keep existing styles just in case but hide standard lines */
 .lineVertical,
@@ -337,15 +336,12 @@
   left: -2%;
 }
 
-
-
 .sectionHeader {
   width: 100%;
   max-width: 1240px;
   text-align: center;
   margin-bottom: 60px;
 }
-
 
 .sectionBadge {
   display: inline-block;
@@ -365,7 +361,6 @@
   letter-spacing: -0.5px;
   color: #0f172a;
 }
-
 
 .sectionTitle span {
   color: #2563eb;

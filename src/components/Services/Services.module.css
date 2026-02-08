@@ -21,7 +21,6 @@
   margin-top: 5px;
 }
 
-
 .badge {
   display: inline-block;
   padding: 8px 18px;
@@ -68,13 +67,10 @@
   transition: all 0.3s ease;
 }
 
-
-
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 70px rgba(37, 99, 235, 0.18);
 }
-
 
 .content {
   max-width: 55%;
@@ -93,7 +89,6 @@
   /* safety if too long */
 }
 
-
 .content p {
   font-size: 0.95rem;
   line-height: 1.6;
@@ -105,8 +100,6 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-
 
 .btn {
   background: #2563eb;
@@ -122,7 +115,6 @@
 .btn:hover {
   background: #1d4ed8;
 }
-
 
 .imageWrapper {
   position: relative;
@@ -141,7 +133,7 @@
 
 /* Grid Pattern Layer (Faded at Top) */
 .imageWrapper::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: -10px;
   /* Match the background size */
@@ -167,6 +159,5 @@
   position: relative;
   z-index: 1;
 }
-
 
 /* ================= Responsive ================= */

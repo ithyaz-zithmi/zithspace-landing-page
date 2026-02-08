@@ -1,51 +1,49 @@
-import React, { useState ,useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import { Icon } from '@iconify/react';
 import styles from './WhyChooseUs.module.css';
-import logoImage from "../../assets/logo.svg"; 
- 
+import logoImage from '../../assets/logo.svg';
 
 const WhyChooseUs = () => {
   const [activeIdx, setActiveIdx] = useState(0);
   const itemRefs = useRef([]);
 
-
   const features = [
     {
-      title: "Product-Driven Mindset",
-      desc: "We think like product owners, not just developers.",
-      icon: "solar:shop-2-bold",
-      align: "left"
+      title: 'Product-Driven Mindset',
+      desc: 'We think like product owners, not just developers.',
+      icon: 'solar:shop-2-bold',
+      align: 'left',
     },
     {
-      title: "Scalable Architecture",
-      desc: "Built to grow with your business needs.",
-      icon: "solar:chat-round-call-bold",
-      align: "right"
+      title: 'Scalable Architecture',
+      desc: 'Built to grow with your business needs.',
+      icon: 'solar:chat-round-call-bold',
+      align: 'right',
     },
     {
-      title: "Clean UI/UX",
-      desc: "Beautiful interfaces that users love.",
-      icon: "solar:paint-roller-bold",
-      align: "left"
+      title: 'Clean UI/UX',
+      desc: 'Beautiful interfaces that users love.',
+      icon: 'solar:paint-roller-bold',
+      align: 'left',
     },
     {
-      title: "Secure & Reliable",
-      desc: "Enterprise-grade security for your data.",
-      icon: "solar:shield-check-bold",
-      align: "right"
+      title: 'Secure & Reliable',
+      desc: 'Enterprise-grade security for your data.',
+      icon: 'solar:shield-check-bold',
+      align: 'right',
     },
     {
-      title: "Long-Term Support",
-      desc: "Partnership that extends beyond launch.",
-      icon: "solar:chat-round-call-bold",
-      align: "left"
+      title: 'Long-Term Support',
+      desc: 'Partnership that extends beyond launch.',
+      icon: 'solar:chat-round-call-bold',
+      align: 'left',
     },
     {
-      title: "Zithtech Assure",
-      desc: "Our gold standard guarantee.",
-      icon: "solar:star-bold",
-      align: "center"
-    }
+      title: 'Zithtech Assure',
+      desc: 'Our gold standard guarantee.',
+      icon: 'solar:star-bold',
+      align: 'center',
+    },
   ];
 
   // const handleLogoClick = () => {
@@ -57,21 +55,19 @@ const WhyChooseUs = () => {
   //   return next;
   // };
 
-const handleLogoClick = () => {
-  setActiveIdx((prev) => {
-    const next = (prev + 1) % features.length;
+  const handleLogoClick = () => {
+    setActiveIdx((prev) => {
+      const next = (prev + 1) % features.length;
 
-    // scroll to that feature
-    itemRefs.current[next]?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
+      // scroll to that feature
+      itemRefs.current[next]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+
+      return next;
     });
-
-    return next;
-  });
-};
-
-
+  };
 
   const progressHeight = (activeIdx / (features.length - 1)) * 100;
 
@@ -79,25 +75,26 @@ const handleLogoClick = () => {
     <section className={styles.container}>
       <div className={styles.header}>
         <span className={styles.badge}>Why Choose Us</span>
-        <h2 className={styles.title}>What Makes <span className={styles.highlight}>Zithtech</span> Different</h2>
+        <h2 className={styles.title}>
+          What Makes <span className={styles.highlight}>Zithtech</span> Different
+        </h2>
       </div>
 
       <div className={styles.timelineWrapper}>
         {/* PROGRESS LINE */}
         <div className={styles.lineContainer}>
-<div
-  className={styles.growingLine}
-  style={{
-    height: activeIdx > 0 ? `${progressHeight}%` : 0,
-    opacity: activeIdx > 0 ? 1 : 0,
-  }}
-/>
-
+          <div
+            className={styles.growingLine}
+            style={{
+              height: activeIdx > 0 ? `${progressHeight}%` : 0,
+              opacity: activeIdx > 0 ? 1 : 0,
+            }}
+          />
         </div>
 
         {/* CLICKABLE LOGO BUTTON */}
-        <button 
-          className={styles.movingLogo} 
+        <button
+          className={styles.movingLogo}
           onClick={handleLogoClick}
           style={{ top: `${progressHeight}%` }}
         >
@@ -109,20 +106,18 @@ const handleLogoClick = () => {
         </button>
 
         <div className={styles.featuresList}>
-{features.map((item, index) => (
-  <div
-    key={index}
-    ref={(el) => {
-      if (el) itemRefs.current[index] = el;
-    }}
-    className={`
+          {features.map((item, index) => (
+            <div
+              key={index}
+              ref={(el) => {
+                if (el) itemRefs.current[index] = el;
+              }}
+              className={`
       ${styles.featureItem}
       ${activeIdx === index ? styles.active : ''}
       ${styles[item.align]}
     `}
-  >
-
-
+            >
               <div className={styles.iconBox}>
                 <Icon icon={item.icon} className={styles.featureIcon} />
               </div>

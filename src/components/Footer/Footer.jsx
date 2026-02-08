@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import styles from './Footer.module.css';
-import logoImage from "../../assets/logo.svg";
+import logoImage from '../../assets/logo.svg';
 import ContactForm from '../Contact/ContactForm';
 
 const Footer = () => {
@@ -31,7 +31,6 @@ const Footer = () => {
 
       {/* MAIN FOOTER */}
       <div className={styles.mainFooter}>
-
         {/* NEW TOP ROW: Logo and Email side by side */}
         <div className={styles.topRow}>
           <div className={styles.logoRow}>
@@ -49,7 +48,8 @@ const Footer = () => {
           {/* Brand Column */}
           <div className={styles.brandCol}>
             <p className={styles.brandDesc}>
-              Partner with Zithtech to transform your business with next-gen AI and smart IT solutions.
+              Partner with Zithtech to transform your business with next-gen AI and smart IT
+              solutions.
             </p>
             <div className={styles.contactLinks}>
               <div className={styles.contactItem}>
@@ -95,13 +95,14 @@ const Footer = () => {
               <img src="https://flagcdn.com/w40/in.png" alt="India" />
             </div>
             <p className={styles.address}>
-              No 37,Balaji Towers,Ground Floor,Ram Nagar South,8th Cross Street,2nd Main Road,Madipakkam,Chennai-600091
+              No 37,Balaji Towers,Ground Floor,Ram Nagar South,8th Cross Street,2nd Main
+              Road,Madipakkam,Chennai-600091
             </p>
           </div>
         </div>
 
         <div className={styles.bottomBar}>
-          <p>Copyright © {new Date().getFullYear()} Zithtech  | All Rights Reserved</p>
+          <p>Copyright © {new Date().getFullYear()} Zithtech | All Rights Reserved</p>
         </div>
       </div>
     </footer>
@@ -109,6 +110,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-

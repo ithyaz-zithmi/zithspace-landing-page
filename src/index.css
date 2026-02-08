@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -11,56 +11,56 @@ section[id] {
 
 /* Specific extra offset for contact/footer section as requested */
 @font-face {
-  font-family: "Objectivity";
-  src: url("/fonts/Objectivity/Objectivity-Thin.woff2") format("woff2");
+  font-family: 'Objectivity';
+  src: url('/fonts/Objectivity/Objectivity-Thin.woff2') format('woff2');
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Objectivity";
-  src: url("/fonts/Objectivity/Objectivity-Light.woff2") format("woff2");
+  font-family: 'Objectivity';
+  src: url('/fonts/Objectivity/Objectivity-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Objectivity";
-  src: url("/fonts/Objectivity/Objectivity-Regular.woff2") format("woff2");
+  font-family: 'Objectivity';
+  src: url('/fonts/Objectivity/Objectivity-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Objectivity";
-  src: url("/fonts/Objectivity/Objectivity-Medium.woff2") format("woff2");
+  font-family: 'Objectivity';
+  src: url('/fonts/Objectivity/Objectivity-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Objectivity";
-  src: url("/fonts/Objectivity/Objectivity-Bold.woff2") format("woff2");
+  font-family: 'Objectivity';
+  src: url('/fonts/Objectivity/Objectivity-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Objectivity";
-  src: url("/fonts/Objectivity/Objectivity-ExtraBold.woff2") format("woff2");
+  font-family: 'Objectivity';
+  src: url('/fonts/Objectivity/Objectivity-ExtraBold.woff2') format('woff2');
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Objectivity";
-  src: url("/fonts/Objectivity/Objectivity-Black.woff2") format("woff2");
+  font-family: 'Objectivity';
+  src: url('/fonts/Objectivity/Objectivity-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
 }
 
 :root {
-  font-family: "Objectivity", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Objectivity', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }

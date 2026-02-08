@@ -6,10 +6,6 @@
   overflow: hidden;
 }
 
-
-
-
-
 .gridBackground {
   position: absolute;
   inset: 0;
@@ -19,23 +15,16 @@
   pointer-events: none;
 
   background-image:
-
+    linear-gradient(#e2e8f0, #e2e8f0), linear-gradient(#cbd5e1, #cbd5e1),
+    linear-gradient(#e2e8f0, #e2e8f0), linear-gradient(#cbd5e1, #cbd5e1),
     linear-gradient(#e2e8f0, #e2e8f0),
-    linear-gradient(#cbd5e1, #cbd5e1),
-    linear-gradient(#e2e8f0, #e2e8f0),
-    linear-gradient(#cbd5e1, #cbd5e1),
-    linear-gradient(#e2e8f0, #e2e8f0),
-
-
     linear-gradient(to right, rgba(148, 163, 184, 0.3) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(148, 163, 184, 0.3) 1px, transparent 1px);
 
   background-size: 70px 70px;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat;
 
-
   animation: gridFadeUp 4s ease-out forwards;
-
 
   mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
   -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
@@ -53,7 +42,8 @@
       490px 440px,
       700px 580px,
       840px 510px,
-      0 10px, 0 10px;
+      0 10px,
+      0 10px;
   }
 
   to {
@@ -65,12 +55,10 @@
       490px 420px,
       700px 560px,
       840px 490px,
-      0 0, 0 0;
+      0 0,
+      0 0;
   }
 }
-
-
-
 
 @keyframes gridMove {
   from {
@@ -81,8 +69,6 @@
     background-position: 70px 70px;
   }
 }
-
-
 
 .container {
   position: relative;
@@ -95,15 +81,14 @@
   text-align: center;
 }
 
-
 .flagText {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: rgba(37, 99, 235, .1);
-  border: 1px solid rgba(37, 99, 235, .25);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.25);
   margin-bottom: 32px;
   font-size: 14px;
 }
@@ -115,8 +100,6 @@
   border-radius: 999px;
   font-weight: 600;
 }
-
-
 
 .title {
   position: relative;
@@ -166,8 +149,6 @@
   margin-top: 12px;
 }
 
-
-
 .floatingLabel {
   position: absolute;
   padding: 6px 16px;
@@ -190,21 +171,14 @@
   position: absolute;
   right: 115px;
   top: 82%;
-
 }
 
 .sendo {
-
   position: absolute;
 
   left: 270px;
   top: 140%;
-
 }
-
-
-
-
 
 .leftLabel {
   left: -40px;
@@ -212,7 +186,6 @@
   background: #16a34a;
   color: #fff;
 }
-
 
 .rightLabel {
   right: -40px;
@@ -229,16 +202,12 @@
   color: #fff;
 }
 
-
-
 .subtitle {
   margin: 28px auto 40px;
   max-width: 620px;
   font-size: clamp(16px, 2.2vw, 20px);
   color: #64748b;
 }
-
-
 
 .buttons {
   display: flex;
@@ -268,8 +237,6 @@
   cursor: pointer;
 }
 
-
-
 .ctaCard.formMode {
   max-width: 1100px;
   text-align: left;
@@ -291,7 +258,7 @@
 }
 
 .blueText {
-  color: #2D5BFF;
+  color: #2d5bff;
 }
 
 .formTitle {
@@ -361,7 +328,7 @@
 .sendFormBtn {
   margin-top: 25px;
   width: 100%;
-  background: #2D5BFF;
+  background: #2d5bff;
   color: white;
   border: none;
   padding: 15px;
@@ -380,7 +347,6 @@
   cursor: pointer;
   color: #64748b;
 }
-
 
 @media (max-width: 850px) {
   .contactFormContainer {

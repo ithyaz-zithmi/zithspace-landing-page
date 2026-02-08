@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./About.module.css";
+import React from 'react';
+import styles from './About.module.css';
 
-import aboutImage from "../../assets/logo.svg";
+import aboutImage from '../../assets/logo.svg';
 
 const About = () => {
   return (
@@ -18,21 +18,17 @@ const About = () => {
           </h2>
 
           <p className={styles.description}>
-            Zithtech is a forward-thinking IT services and product company
-            dedicated to building scalable, modern digital solutions. We
-            combine cutting-edge technology with creative innovation to
-            deliver exceptional results for businesses worldwide.
+            Zithtech is a forward-thinking IT services and product company dedicated to building
+            scalable, modern digital solutions. We combine cutting-edge technology with creative
+            innovation to deliver exceptional results for businesses worldwide.
           </p>
 
           <p className={styles.description}>
-            Our dual focus on client services and proprietary products allows
-            us to understand both sides of the digital landscape, bringing
-            unique insights to every project we undertake.
+            Our dual focus on client services and proprietary products allows us to understand both
+            sides of the digital landscape, bringing unique insights to every project we undertake.
           </p>
 
-          <button className={styles.ctaButton}>
-            Book Free Consultation
-          </button>
+          <button className={styles.ctaButton}>Book Free Consultation</button>
         </div>
 
         {/* Image */}

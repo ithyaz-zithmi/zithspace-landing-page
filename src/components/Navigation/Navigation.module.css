@@ -85,6 +85,11 @@
   color: #2563eb;
 }
 
+.navLink.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
 /* Remove underline effect */
 .navLink::after {
   display: none;

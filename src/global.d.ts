@@ -4,8 +4,6 @@
 //   export default classes;
 // }
 
-
-
 // src/global.d.ts
 
 // Image file declarations
@@ -39,6 +37,3 @@ declare module '*.module.css' {
   const classes: { [key: string]: string };
   export default classes;
 }
-
-
-

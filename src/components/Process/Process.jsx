@@ -6,8 +6,8 @@ import {
   DiscordOutlined,
   AndroidOutlined,
   HeatMapOutlined,
-  PlayCircleOutlined
-} from "@ant-design/icons";
+  PlayCircleOutlined,
+} from '@ant-design/icons';
 
 const Process = () => {
   const steps = [
@@ -60,9 +60,9 @@ const Process = () => {
           How We <span className={styles.highlight}>Deliver Excellence</span>
         </h2>
         <p className={styles.description}>
-          A transparent, proven process focused on quality, speed, and
-          measurable results, combining strategic planning, user-centered
-          design, and agile development to deliver reliable, high-value solutions.
+          A transparent, proven process focused on quality, speed, and measurable results, combining
+          strategic planning, user-centered design, and agile development to deliver reliable,
+          high-value solutions.
         </p>
         <button
           className={styles.contactBtn}
