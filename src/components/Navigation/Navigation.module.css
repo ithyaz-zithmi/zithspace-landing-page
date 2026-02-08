@@ -16,7 +16,6 @@
   border-radius: 40px;
 }
 
-
 /* .navigation {
   display: flex;
   justify-content: space-between;
@@ -37,9 +36,9 @@
 }  */
 
 .logoContainer {
-  background: black;
+  /* background: black; */
   border-radius: 50%;
-  padding: 10px;
+  padding: 2px;
   /* Adjust padding */
   display: flex;
   align-items: center;
@@ -50,7 +49,7 @@
 }
 
 .logoImage {
-  height: 30px;
+  height: 50px;
   /* Adjust logo size */
   width: auto;
   object-fit: contain;

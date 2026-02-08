@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import styles from "./Products.module.css";
 
 import {
@@ -15,6 +15,7 @@ import img4 from "../../assets/productimg4.jpeg";
 
 const Products = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const intervalRef = useRef(null);
 
   const productData = [
     { id: 0, img: img1, color: "#A855F7" },
@@ -24,13 +25,28 @@ const Products = () => {
 
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startInterval = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
       setActiveTab((prev) => (prev + 1) % productData.length);
     }, 4000);
-
-    return () => clearInterval(interval);
   }, [productData.length]);
+
+  const handleTabClick = (tabIndex) => {
+    setActiveTab(tabIndex);
+    startInterval(); // Reset the interval when manually clicking
+  };
+
+  useEffect(() => {
+    startInterval();
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [startInterval]);
 
   return (
     <section id="product" className={styles.sectionContainer}>
@@ -72,6 +88,8 @@ const Products = () => {
           <div
             className={`${styles.iconWrapper} ${activeTab === 0 ? styles.active : ""
               } ${styles.posPurple}`}
+            onClick={() => handleTabClick(0)}
+            style={{ cursor: "pointer" }}
           >
             <div className={styles.iconBox}>
               <AppstoreOutlined />
@@ -83,6 +101,8 @@ const Products = () => {
           <div
             className={`${styles.iconWrapper} ${activeTab === 1 ? styles.active : ""
               } ${styles.posGreen}`}
+            onClick={() => handleTabClick(1)}
+            style={{ cursor: "pointer" }}
           >
             <div className={styles.iconBox}>
               <FileTextOutlined />
@@ -94,6 +114,8 @@ const Products = () => {
           <div
             className={`${styles.iconWrapper} ${activeTab === 2 ? styles.active : ""
               } ${styles.posOrange}`}
+            onClick={() => handleTabClick(2)}
+            style={{ cursor: "pointer" }}
           >
             <div className={styles.iconBox}>
               <RadiusBottomleftOutlined />
@@ -105,6 +127,8 @@ const Products = () => {
                     <div
             className={`${styles.iconWrapper} ${activeTab === 3 ? styles.active : ""
               } ${styles.posbule}`}
+            onClick={() => handleTabClick(3)}
+            style={{ cursor: "pointer" }}
           >
             <div className={styles.iconBox}>
               <IssuesCloseOutlined />

@@ -1,8 +1,8 @@
 import React, { useState ,useRef} from 'react';
 import { Icon } from '@iconify/react';
 import styles from './WhyChooseUs.module.css';
-import logoImage from "../../assets/logo.png"; 
-import background from "../../assets/galaxy.avif"; 
+import logoImage from "../../assets/logo.svg"; 
+ 
 
 const WhyChooseUs = () => {
   const [activeIdx, setActiveIdx] = useState(0);

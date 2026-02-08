@@ -43,7 +43,7 @@
 }
 
 .primaryBtn {
-  background: #2D5BFF;
+  background: #2d5bff;
   color: white;
   border: none;
   padding: 14px 28px;
@@ -54,8 +54,8 @@
 
 .secondaryBtn {
   background: transparent;
-  color: #2D5BFF;
-  border: 2px solid #2D5BFF;
+  color: #2d5bff;
+  border: 2px solid #2d5bff;
   padding: 14px 28px;
   border-radius: 50px;
   font-weight: 700;
@@ -94,7 +94,6 @@
   color: #ffffff;
   max-width: 1340px;
   margin: 0 auto;
-
 }
 
 /* THE TOP ROW LOGO + NEWSLETTER */
@@ -117,6 +116,7 @@
   width: 45px;
   height: 45px;
   object-fit: contain;
+  filter: invert(1);
 }
 
 .brandName {
@@ -147,7 +147,7 @@
 }
 
 .newsletter button {
-  background: #2D5BFF;
+  background: #2d5bff;
   color: white;
   border: none;
   padding: 12px 35px;
@@ -199,7 +199,7 @@
 }
 
 .linkCol li:hover {
-  color: #2D5BFF;
+  color: #2d5bff;
 }
 
 .socialLink {
@@ -234,8 +234,6 @@
   font-size: 13px;
   color: #64748b;
 }
-
-
 
 @media (max-width: 600px) {
   .contentWrapper {

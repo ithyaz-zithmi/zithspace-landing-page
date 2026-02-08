@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./About.module.css";
 
-import aboutImage from "../../assets/logo.png";
+import aboutImage from "../../assets/logo.svg";
 
 const About = () => {
   return (

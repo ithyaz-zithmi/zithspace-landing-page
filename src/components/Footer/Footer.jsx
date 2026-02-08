@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import styles from './Footer.module.css';
-import logoImage from "../../assets/logo.png";
+import logoImage from "../../assets/logo.svg";
 import ContactForm from '../Contact/ContactForm';
 
 const Footer = () => {

@@ -5,7 +5,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-
   color: white;
   padding: 100px 20px;
   text-align: center;
@@ -14,14 +13,13 @@
   border-radius: 0 0 175px 0;
 }
 
-
 .header {
   margin-bottom: 80px;
 }
 
 .badge {
   background: #ffffff;
-  color: #2D5BFF;
+  color: #2d5bff;
   padding: 8px 20px;
   border-radius: 50px;
   font-weight: 700;
@@ -34,7 +32,7 @@
 }
 
 .highlight {
-  color: #2D5BFF;
+  color: #2d5bff;
 }
 
 .timelineWrapper {
@@ -60,14 +58,12 @@
   transition: background 0.4s ease;
 }
 
-
-
 .growingLine {
   width: 100%;
   height: 0;
   opacity: 0;
   /* ⬅ hidden by default */
-  background: linear-gradient(to bottom, #2D5BFF, #60A5FA);
+  background: linear-gradient(to bottom, #2d5bff, #60a5fa);
   box-shadow:
     0 0 20px rgba(45, 91, 255, 0.9),
     0 0 40px rgba(45, 91, 255, 0.5);
@@ -76,8 +72,6 @@
     height 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55),
     opacity 0.4s ease;
 }
-
-
 
 /* THE LOGO BUTTON */
 .movingLogo {
@@ -97,7 +91,7 @@
   height: 65px;
   background: black;
   /* White background makes most logos pop */
-  border: 3px solid #2D5BFF;
+  border: 3px solid #2d5bff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -114,13 +108,14 @@
   /* Adjust based on your logo's shape */
   height: 70%;
   object-fit: contain;
+  filter: invert(1);
 }
 
 .pulseRing {
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 2px solid #2D5BFF;
+  border: 2px solid #2d5bff;
   border-radius: 50%;
   top: 0;
   left: 0;
@@ -144,7 +139,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  ;
 }
 
 .featureItem {
@@ -178,7 +172,7 @@
 
 .iconBox {
   font-size: 75px;
-  color: #2D5BFF;
+  color: #2d5bff;
   margin-bottom: 3px;
 }
 
@@ -194,7 +188,7 @@
 }
 
 .active .featureTitle {
-  color: #2D5BFF;
+  color: #2d5bff;
   text-shadow: 0 0 10px rgba(45, 91, 255, 0.3);
 }
 
