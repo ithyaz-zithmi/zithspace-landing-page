@@ -1,0 +1,420 @@
+/* =============================================
+   HERO SECTION — Master Container
+   ============================================= */
+.hero {
+  position: relative;
+  padding: 5rem 0 0;
+  /* Soft blue gradient background */
+  background: linear-gradient(160deg, #ffffff 0%, #eef1ff 40%, #c8d4ff 100%);
+  /* Crucial: allow elements to hang off the bottom */
+  overflow: visible;
+  min-height: 100vh;
+}
+
+/* Background Grid Lines */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(100, 120, 220, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 120, 220, 0.08) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Bar Chart Side Decorations ── */
+.barDecorations {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  /* Slightly taller to frame the dashboard */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Blue gradient blocks on the sides */
+.barDecorations::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(6, 77, 243) 0%,
+    transparent 35%,
+    transparent 65%,
+    rgba(6, 77, 243) 0%
+  );
+  -webkit-mask-image: linear-gradient(to top, black 20%, transparent 100%);
+  mask-image: linear-gradient(to top, black 20%, transparent 100%);
+}
+
+/* White lines creating the "Bar" gaps */
+.barDecorations::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 38px,
+    /* End of the blue bar space */ #ffffff 38px,
+    /* Start of the white line */ #ffffff 40px
+      /* End of the white line (Width is now 2px) */
+  );
+  -webkit-mask-image: linear-gradient(to top, black 20%, transparent 100%);
+  mask-image: linear-gradient(to top, black 20%, transparent 100%);
+  /* Lowering opacity slightly makes the lines look even thinner/softer */
+  opacity: 0.6;
+}
+
+/* ─────────────────────────────────────────── */
+/* TEXT CONTENT                               */
+/* ─────────────────────────────────────────── */
+.centerContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  /* Increased from 3.5rem to 4.2rem for more impact */
+  font-size: 4.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  /* Slightly tighter line-height for large text */
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  /* Tighter tracking for a premium feel */
+}
+
+.title span {
+  display: block;
+  /* Ensures the blue text sits on its own line like the image */
+  color: #2563eb;
+}
+
+.subtitle {
+  /* Increased from 1.1rem to 1.25rem */
+  font-size: 1.25rem;
+  color: #475569;
+  max-width: 800px;
+  /* Widened to maintain balance with larger text */
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  /* margin-bottom: 1rem; */
+  /* Reduced from 3.5rem to pull dashboard closer */
+  position: relative;
+  z-index: 20;
+}
+
+.outlineBtn {
+  background: transparent;
+  /* Use a thinner border and a slightly more muted blue-gray for the outline 
+     unless it is the active focus, to match high-end SaaS designs */
+  border: 1.5px solid #2563eb;
+  color: #2563eb;
+
+  /* Increased padding for a larger "hit" area to match larger text */
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  /* Perfectly pill-shaped */
+
+  /* Font weight and size scaled up */
+  font-weight: 600;
+  font-size: 1.15rem;
+  font-size: 1.15rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
+}
+
+.outlineBtn:hover {
+  background-color: #f8faff;
+  /* Light tint on hover instead of solid blue */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+/* If you want it to match the solid blue hover from your previous code: */
+/*
+.outlineBtn:hover {
+  background: #2563eb;
+  color: white;
+}
+*/
+
+/* Adjust the icon size inside the button */
+.outlineBtn svg {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.outlineBtn:hover svg {
+  transform: translateX(4px);
+  /* Subtle arrow movement on hover */
+}
+
+/* ─────────────────────────────────────────── */
+/* DASHBOARD SECTION (The Breakout Logic)     */
+/* ─────────────────────────────────────────── */
+.dashboardSection {
+  position: relative;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  height: 450px;
+  /* Anchors the absolute children */
+}
+
+/* The Main Dashboard Image */
+.dashboard {
+  position: absolute;
+  right: 0;
+  left: 300px;
+  /* Push it down so it sits half-on and half-off the grid */
+  bottom: -150px;
+  width: 82%;
+  height: 100%;
+  z-index: 1;
+  background: white;
+  border-radius: 24px;
+  /* Thick white border makes it "pop" outside the grid lines */
+  border: 15px solid #d0d4f4;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.dashboardImage {
+  width: 100%;
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* The Left Selector Card */
+.floatingCard {
+  position: absolute;
+  left: 0;
+  bottom: -120px;
+  left: -10px;
+  /* Floating over the dashboard/grid intersection */
+  width: 310px;
+  z-index: 20;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2rem;
+  border: 15px solid #d0d4f4;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  gap: 10px;
+}
+
+/* Quadrant Dividers */
+.featureGrid::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: #f1f5f9;
+}
+
+.featureGrid::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  bottom: 5%;
+  width: 1px;
+  background: #f1f5f9;
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Reduced vertical padding to make the card tighter */
+  padding: 1rem 0.25rem;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  gap: 4px;
+  /* Space between icon and text */
+}
+
+.featureItem:hover {
+  background: #f8faff;
+}
+
+.featureIcon {
+  /* Scaling the icon down slightly to match the smaller text */
+  font-size: 1.4rem;
+  margin-bottom: 2px;
+  color: #64748b;
+}
+
+.featureLabel {
+  /* Reduced from 0.85rem to 0.75rem for that precise Figma look */
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #334155;
+  text-align: center;
+  line-height: 1.2;
+  /* Optional: limit width so text wraps like in the image */
+  max-width: 90px;
+}
+
+/* Active State for the Card Buttons */
+.activeItem {
+  background: #f1f5ff !important;
+}
+
+.activeItem .featureIcon {
+  color: #2563eb;
+}
+
+.activeItem .featureLabel {
+  color: #2563eb;
+}
+
+/* ─────────────────────────────────────────── */
+/* RESPONSIVE                                 */
+/* ─────────────────────────────────────────── */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hero {
+    /* overflow: hidden; */
+    padding: 2rem 0 0rem;
+    /* Reduced bottom space to 0 */
+    min-height: auto;
+  }
+
+  .title {
+    font-size: 2rem;
+    /* reduced from 2.2rem */
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 1.25rem;
+    /* Explicit gap for mobile buttons */
+    margin-bottom: 0rem;
+    /* Removed gap below buttons */
+  }
+
+  .dashboardSection {
+    margin-top: -2.5rem;
+    /* Pull the dashboard section up into the button area */
+    height: auto;
+    min-height: 250px;
+  }
+
+  .floatingCard {
+    display: none;
+    /* Hide floating card on mobile as requested */
+  }
+
+  .dashboard {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: -80px;
+    border: 8px solid #d0d4f4;
+    /* thinner border for mobile */
+    border-radius: 16px;
+  }
+
+  .barDecorations {
+    height: 15%;
+    /* Reduced from 20% to make it even subtler on mobile */
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    padding: 4rem 0 2rem;
+  }
+
+  .hero::before {
+    background-size: 60px 60px;
+  }
+
+  .dashboard {
+    width: 85%;
+    right: 7.5%;
+  }
+
+  .floatingCard {
+    width: 280px;
+    left: 3%;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Between Tablet and Desktop */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .hero::before {
+    background-size: 70px 70px;
+  }
+
+  .dashboard {
+    width: 88%;
+    right: 6%;
+  }
+
+  .floatingCard {
+    width: 300px;
+    left: 2%;
+  }
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+  }
+}

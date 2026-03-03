@@ -1,0 +1,606 @@
+.hero {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  /* Darker gradient like the image */
+  background: radial-gradient(circle at 10% 30%, #2e1065 0%, #0f172a 45%, #020617 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* The Grid Overlay from the image */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-text span {
+  color: #60a5fa;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.hero-text p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.demo-btn {
+  background: #2563eb;
+  color: white;
+  padding: 14px 36px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* VISUAL SECTION */
+.hero-visual {
+  flex: 1;
+  height: 500px;
+  position: relative;
+}
+
+.visual-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.orbital-svg {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 800px;
+  height: 600px;
+}
+
+/* ZI CARD STYLE */
+.zi-card-outer {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  border-radius: 35px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
+}
+
+.zi-card {
+  width: 110px;
+  height: 110px;
+  background: #000;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+}
+
+.zi-card img {
+  width: 60px;
+  filter: brightness(1.2);
+}
+
+/* PULSE DOT */
+.pulse-dot {
+  position: absolute;
+  left: 215px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #3b82f6, 0 0 30px #3b82f6;
+}
+
+/* ICONS ALONG ARCS */
+.icon {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  z-index: 10;
+}
+
+.icon-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Specific Positions based on the image curves */
+/* Inner Arc */
+.icon-top-inner { left: 380px; top: 10%; }
+.icon-mid-inner { left: 340px; top: 44%; }
+.icon-bot-inner { left: 380px; top: 80%; font-size: 0.7rem; font-weight: bold; }
+
+/* Middle Arc */
+.icon-top-mid { left: 470px; top: 20%; }
+.icon-center-mid { left: 450px; top: 44%; }
+.icon-bot-mid { left: 480px; top: 70%; }
+
+/* Outer Arc */
+.icon-center-outer { left: 535px; top: 44%; }
+
+.greyt-text { font-size: 0.6rem; color: #d1d5db; }
+
+.icon-bg img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* SVG Connection Lines Styling */
+.connection-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Tablet Responsive (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    width: 100%;
+  }
+  
+  .hero-text {
+    order: 1;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .demo-btn {
+    padding: 12px 32px;
+    font-size: 1rem;
+  }
+  
+  .hero-visual {
+    order: 2;
+    height: 450px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .visual-wrapper {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+  }
+  
+  /* ZI logo on LEFT side */
+  .zi-card-outer {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+  
+  .zi-card {
+    width: 90px;
+    height: 90px;
+    border-radius: 22px;
+  }
+  
+  .zi-card img {
+    width: 55px;
+  }
+  
+  /* Icons positioned on RIGHT side */
+  .icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 15;
+  }
+  
+  .icon-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .icon-bg img {
+    width: 60%;
+  }
+  
+  /* Tablet icon positions */
+  .icon-top-inner { left: 350px; top: 10%; }
+  .icon-mid-inner { left: 250px; top: 45%; }
+  .icon-bot-inner { left: 350px; top: 80%; }
+  
+  .icon-top-mid { left: 420px; top: 20%; }
+  .icon-center-mid { left: 320px; top: 45%; }
+  .icon-bot-mid { left: 420px; top: 70%; }
+  
+  .icon-center-outer { left: 480px; top: 45%; }
+  
+  .orbital-svg {
+    display: none;
+  }
+}
+
+/* Mobile (480px to 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero {
+    padding: 30px 15px;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    width: 100%;
+  }
+  
+  .hero-text {
+    order: 1;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+  }
+  
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  
+  .demo-btn {
+    padding: 10px 28px;
+    font-size: 0.95rem;
+  }
+  
+  .hero-visual {
+    order: 2;
+    height: 380px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .visual-wrapper {
+    position: relative;
+    width: 450px;
+    height: 350px;
+    margin: 0 auto;
+  }
+  
+  /* ZI logo on LEFT side */
+  .zi-card-outer {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+  
+  .zi-card {
+    width: 75px;
+    height: 75px;
+    border-radius: 18px;
+  }
+  
+  .zi-card img {
+    width: 45px;
+  }
+  
+  /* Icons positioned on RIGHT side */
+  .icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 15;
+  }
+  
+  .icon-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .icon-bg img {
+    width: 55%;
+  }
+  
+  /* Mobile icon positions */
+  .icon-top-inner { left: 290px; top: 5%; }
+  .icon-mid-inner { left: 200px; top: 45%; }
+  .icon-bot-inner { left: 290px; top: 83%; }
+  
+  .icon-top-mid { left: 330px; top: 19%; }
+  .icon-center-mid { left: 290px; top: 45%; }
+  .icon-bot-mid { left: 330px; top: 70%; }
+  
+  .icon-center-outer { left: 380px; top: 45%; }
+  
+  .orbital-svg {
+    display: none;
+  }
+}
+
+/* Small Mobile (320px to 479px) */
+@media (max-width: 479px) {
+  .hero {
+    padding: 25px 10px;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .hero-text {
+    order: 1;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-text p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .demo-btn {
+    padding: 8px 24px;
+    font-size: 0.85rem;
+  }
+  
+  .hero-visual {
+    order: 2;
+    height: 320px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .visual-wrapper {
+    position: relative;
+    width: 350px;
+    height: 300px;
+    margin: 0 auto;
+  }
+  
+  /* ZI logo on LEFT side */
+  .zi-card-outer {
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+  
+  .zi-card {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+  }
+  
+  .zi-card img {
+    width: 35px;
+  }
+  
+  /* Icons positioned on RIGHT side */
+  .icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    z-index: 15;
+  }
+  
+  .icon-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .icon-bg img {
+    width: 50%;
+  }
+  
+  /* Small mobile icon positions */
+  .icon-top-inner { left: 230px; top: 5%; }
+  .icon-mid-inner { left: 150px; top: 45%; }
+  .icon-bot-inner { left: 230px; top: 85%; }
+  
+  .icon-top-mid { left: 270px; top: 18%; }
+  .icon-center-mid { left: 230px; top: 45%; }
+  .icon-bot-mid { left: 275px; top: 70%; }
+  
+  .icon-center-outer { left: 310px; top: 45%; }
+  
+  .orbital-svg {
+    display: none;
+  }
+}
+
+/* Extra Small Mobile (up to 319px) */
+@media (max-width: 319px) {
+  .hero {
+    padding: 20px 8px;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .hero-text {
+    order: 1;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .hero-text p {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+  
+  .demo-btn {
+    padding: 6px 20px;
+    font-size: 0.75rem;
+  }
+  
+  .hero-visual {
+    order: 2;
+    height: 280px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .visual-wrapper {
+    position: relative;
+    width: 280px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  
+  /* ZI logo on LEFT side */
+  .zi-card-outer {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+  
+  .zi-card {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+  }
+  
+  .zi-card img {
+    width: 30px;
+  }
+  
+  /* Icons positioned on RIGHT side */
+  .icon {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    z-index: 15;
+  }
+  
+  .icon-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .icon-bg img {
+    width: 45%;
+  }
+  
+  /* Extra small mobile icon positions */
+  .icon-top-inner { left: 140px; top: 18%; }
+  .icon-mid-inner { left: 100px; top: 45%; }
+  .icon-bot-inner { left: 140px; top: 72%; }
+  
+  .icon-top-mid { left: 190px; top: 30%; }
+  .icon-center-mid { left: 120px; top: 35%; }
+  .icon-bot-mid { left: 200px; top: 60%; }
+  
+  .icon-center-outer { left: 230px; top: 45%; }
+  
+  .orbital-svg {
+    display: none;
+  }
+}

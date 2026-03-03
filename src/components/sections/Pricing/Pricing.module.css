@@ -1,0 +1,325 @@
+.pricingSection {
+  background-color: #ffffff;
+  padding: 50px 0;
+}
+
+/* Updated SectionHeader Highlight color */
+.highlight {
+  color: #2563eb;
+}
+
+/* Billing Toggle Styles */
+.billingToggle {
+  background-color: #f3f4f6;
+  padding: 5px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto 50px auto;
+}
+
+.billingToggle button {
+  border: none;
+  padding: 10px 30px;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: #6b7280;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.billingToggle button.active {
+  background-color: #2563eb;
+  color: white;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+/* Pricing Cards Layout */
+.pricingContainer {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Base Card Style */
+.pricingCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 40px;
+  /* INCREASED WIDTH */
+  width: 380px; 
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Popular Card Style */
+.pricingCard.popular {
+  background-color: #3b82f6;
+  color: white;
+  position: relative;
+  border: none;
+}
+
+.mostPopularTag {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: white;
+  color: #3b82f6;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Text Styles */
+.pricingCard h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.pricingCard.popular h2 {
+  color: white;
+}
+
+.planDescription {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  height: 40px; /* Keeps height consistent */
+}
+
+.pricingCard.popular .planDescription {
+  color: #dbeafe;
+}
+
+/* Price Box */
+.priceBox {
+  margin-bottom: 30px;
+  /* ADDED: Horizontal Line Under Amount */
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 30px;
+}
+
+.pricingCard.popular .priceBox {
+  /* Line color for popular card */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.price {
+  /* INCREASED FONT SIZE */
+  font-size: 3.5rem; 
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.pricingCard.popular .price {
+  color: white;
+}
+
+.duration {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.pricingCard.popular .duration {
+  color: #dbeafe;
+}
+
+/* Features List */
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+.featuresList li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.pricingCard.popular .featuresList li {
+  color: white;
+}
+
+.checkIcon {
+  margin-right: 12px;
+  color: #4b5563;
+  font-size: 1.2rem;
+}
+
+.pricingCard.popular .checkIcon {
+  color: white;
+}
+
+/* CTA Button */
+.ctaButton {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.ctaButton:hover {
+  background-color: #e5e7eb;
+}
+
+.pricingCard.popular .ctaButton {
+  background-color: white;
+  color: #3b82f6;
+}
+
+.pricingCard.popular .ctaButton:hover {
+  background-color: #f9fafb;
+}
+
+/* Tablet Responsive Styles */
+@media (max-width: 1024px) {
+  .pricingContainer {
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+  
+  .pricingCard {
+    width: 320px;
+    padding: 35px;
+  }
+  
+  .price {
+    font-size: 3rem;
+  }
+  
+  .pricingCard h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .pricingSection {
+    padding: 40px 0;
+  }
+  
+  .billingToggle {
+    margin: 0 auto 40px auto;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .billingToggle button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .pricingContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .pricingCard {
+    width: 100%;
+    max-width: 350px;
+    padding: 30px 25px;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+  }
+  
+  .pricingCard h2 {
+    font-size: 1.5rem;
+  }
+  
+  .planDescription {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    height: auto;
+    min-height: 38px;
+  }
+  
+  .featuresList {
+    margin-bottom: 30px;
+  }
+  
+  .featuresList li {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  
+  .checkIcon {
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+  
+  .ctaButton {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .pricingSection {
+    padding: 30px 0;
+  }
+  
+  .pricingContainer {
+    padding: 0 15px;
+  }
+  
+  .pricingCard {
+    padding: 25px 20px;
+  }
+  
+  .price {
+    font-size: 2.2rem;
+  }
+  
+  .pricingCard h2 {
+    font-size: 1.4rem;
+  }
+  
+  .planDescription {
+    font-size: 0.9rem;
+    min-height: 35px;
+  }
+  
+  .featuresList li {
+    font-size: 0.85rem;
+  }
+  
+  .ctaButton {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+  
+  .mostPopularTag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    right: 15px;
+  }
+}

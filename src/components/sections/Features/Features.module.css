@@ -1,0 +1,499 @@
+.featuresSection {
+  padding-top: 180px;
+  padding-bottom: 30px;
+  background-color: #ffffff;
+}
+
+.narrowContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.headerArea {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.badgeWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.blueLine {
+  color: #084ee4;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.badgeText {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.mainTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -1px;
+}
+
+.blueText {
+  color: #084ee4;
+  /* The "One Platform." color */
+}
+
+.tabsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  border: 1px solid #e2e8f0;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+  padding: 6px;
+  border-radius: 50px;
+  background: #fff;
+}
+
+.tabButton {
+  padding: 8px 24px;
+  border-radius: 40px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: #6366f1;
+  color: white;
+}
+
+.featureCard {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  border-radius: 40px;
+  padding: 40px 0 0 50px;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.hrTheme {
+  background-color: #ede9fe;
+}
+
+.financeTheme {
+  background-color: #dcfce7;
+}
+
+.workTheme {
+  background-color: #ffedd5;
+}
+
+.adminTheme {
+  background-color: #fef9c3;
+}
+
+.textContent {
+  flex: 0.7;
+  padding-bottom: 40px;
+  z-index: 2;
+}
+
+.moduleTitle {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.moduleSubtitle {
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+}
+
+.featureListItem {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 2px 0;
+}
+
+.bullet {
+  font-weight: bold;
+  font-size: 18px;
+  color: #111827;
+}
+
+.itemText strong {
+  font-size: 16px;
+  color: #1f2937;
+}
+
+.itemText p {
+  font-size: 13.5px;
+  color: #4b5563;
+  margin-top: 1px;
+}
+
+.demoPillButton {
+  margin-top: 15px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.visualContent {
+  flex: 1.3;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.mainImageWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.imgMainDocked {
+  width: 110%;
+  max-width: 750px;
+  border-top-left-radius: 20px;
+  box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.06);
+  display: block;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.topStack {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 10;
+}
+
+.stackedTopImg {
+  width: 170px;
+  border: 3px solid white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+  margin-bottom: -120px;
+  transition: transform 0.3s ease;
+}
+
+.stackedTopImg:nth-child(2) {
+  transform: translateX(-20px);
+}
+
+.stackedTopImg:nth-child(3) {
+  transform: translateX(-40px);
+}
+
+.stackedTopImg:hover {
+  transform: translateX(-50px) scale(1.05);
+  z-index: 20;
+}
+
+.imgTopRight {
+  position: absolute;
+  top: -5%;
+  right: 5%;
+  width: 170px;
+  border: 3px solid white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.bottomStack {
+  position: absolute;
+  bottom: 140px;
+  left: -40px;
+  display: flex;
+  flex-direction: column;
+  z-index: 11;
+}
+
+.stackedImg {
+  width: 200px;
+  border: 3px solid white;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  background: white;
+  margin-bottom: -35px;
+}
+
+.stackedImg:nth-child(2) {
+  margin-left: 20px;
+}
+
+.stackedImg:nth-child(3) {
+  margin-left: 40px;
+}
+
+@media (max-width: 1024px) {
+  .featureCard {
+    flex-direction: column;
+    padding: 30px;
+    height: auto;
+  }
+
+  .bottomStack {
+    display: none;
+  }
+}
+
+.startImg,
+.endImg {
+  width: 170px;
+  border: 3px solid white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.workLayout .startImg {
+  width: 250px;
+}
+
+.workLayout .endImg {
+  width: 130px;
+}
+
+.topStartContainer {
+  position: absolute;
+
+  top: -3%;
+  left: 5%;
+  z-index: 10;
+}
+
+.topEndContainer {
+  position: absolute;
+  top: -3%;
+  right: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  z-index: 10;
+}
+
+.bullet {
+  position: relative;
+  font-weight: bold;
+  font-size: 18px;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  /* Fixed width to center the ring */
+  height: 24px;
+  z-index: 1;
+}
+
+/* --- The Inner Dot Animation --- */
+.bullet {
+  animation: dotBlink 1.5s infinite ease-in-out;
+}
+
+/* --- The Outer Circle (Ring) --- */
+.bullet::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  /* Size of the ring */
+  height: 5px;
+  border: 2px solid currentColor;
+  /* Uses the dot's color */
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+  animation: ringPulse 1.5s infinite ease-in-out;
+}
+
+/* --- Keyframes --- */
+
+/* Inner Dot Blinking */
+@keyframes dotBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Outer Ring Pulsing and Expanding */
+@keyframes ringPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(2.2);
+    /* Expands outward */
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* --- Theme Color Mapping --- */
+/* This ensures the ring matches the dot color for each tab */
+.hrTheme .bullet {
+  color: #6d28d9;
+}
+
+.workTheme .bullet {
+  color: #ea580c;
+}
+
+.financeTheme .bullet {
+  color: #16a34a;
+}
+
+.adminTheme .bullet {
+  color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .featuresSection {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .tabsWrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 6px 15px;
+    white-space: nowrap;
+    scrollbar-width: none;
+    gap: 8px;
+  }
+
+  .tabsWrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabButton {
+    padding: 8px 16px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .featureCard {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    border-radius: 24px;
+    min-height: auto;
+    gap: 20px;
+  }
+
+  /* REORDERING LOGIC */
+  /* We use display: contents to break the children out so we can order them */
+  .textContent {
+    display: contents;
+  }
+
+  .visualContent {
+    display: contents;
+  }
+
+  .moduleTitle {
+    order: 1;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .moduleSubtitle {
+    order: 2;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  .mainImageWrapper {
+    order: 3;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .imgMainDocked {
+    width: 100%;
+    margin: 0;
+    border-radius: 12px;
+  }
+
+  .featureList {
+    order: 4;
+    margin-top: 10px;
+  }
+
+  .demoPillButton {
+    order: 5;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Hide decorative images on mobile */
+  .topStartContainer,
+  .topEndContainer,
+  .bottomStack,
+  .stackedTopImg,
+  .topStack {
+    display: none !important;
+  }
+
+  .featureListItem {
+    padding: 8px 0;
+  }
+
+  .itemText strong {
+    font-size: 15px;
+  }
+
+  .itemText p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}

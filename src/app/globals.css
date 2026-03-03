@@ -1,0 +1,102 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #60a5fa;
+  --primary-soft: #eff6ff;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-light: #64748b;
+  --background-white: #ffffff;
+  --background-light: #f8fafc;
+  --border-color: #e2e8f0;
+  --grid-color: rgba(37, 99, 235, 0.03);
+  --card-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  --hover-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.2);
+}
+
+body {
+  font-family:
+    var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+  background-color: white;
+}
+
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 80px;
+  }
+
+  .grid-background {
+    background-size: 40px 40px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-background {
+    background-size: 50px 50px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .grid-background {
+    background-size: 55px 55px;
+  }
+}

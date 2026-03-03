@@ -1,0 +1,125 @@
+.faq {
+  padding: 40px 20px 20px 20px;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.topBadge {
+  color: #2563EB;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mainTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.mainTitle span {
+  color: #2563EB;
+}
+
+/* Grid Layout */
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faqColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card Styling */
+.faqCard {
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.activeCard {
+  border-color: #2563EB;
+  background-color: #EFF6FF;
+  /* Light blue background for open card */
+}
+
+.contentWrapper {
+  flex: 1;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0;
+}
+
+.answer {
+  font-size: 15px;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-top: 16px;
+}
+
+/* Icon Styling */
+.toggleIcon {
+  width: 24px;
+  height: 24px;
+  background-color: #2563EB;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .faq {
+    padding: 30px 15px;
+  }
+
+  .faqGrid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq {
+    padding: 20px 10px;
+  }
+
+  .faqCard {
+    padding: 16px;
+  }
+
+  .question {
+    font-size: 16px;
+  }
+}

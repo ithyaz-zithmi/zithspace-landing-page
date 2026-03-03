@@ -1,0 +1,211 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 999;
+}
+
+/* Keep header sticky on mobile */
+@media (max-width: 768px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 998;
+  }
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Ensure the header content remains a single line */
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Navigation remains on the same line due to flexbox */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2; /* Takes more space to ensure links aren't cramped */
+}
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* Space between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rightSide {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navLink {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+.navLinkActive {
+  color: var(--primary-color);
+  font-weight: 600;
+  position: relative;
+}
+
+.navLinkActive::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  border-radius: 1px;
+}
+
+.demoButton {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.demoButton:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.mobileMenuButton {
+  display: none;
+  z-index: 1001;
+}
+
+.mobileMenuButton span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* Mobile and Tablet Styles */
+@media (max-width: 768px) {
+  .headerContent {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .logoImage {
+    height: 32px;
+  }
+
+  .navCenter {
+    display: none;
+  }
+
+  .buttonSide {
+    gap: 12px;
+  }
+
+  .demoButton {
+    display: flex;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .headerContent {
+    height: 70px;
+    padding: 0 24px;
+  }
+
+  .logoImage {
+    height: 36px;
+  }
+
+  .navList {
+    gap: 1.8rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+  }
+
+  .demoButton {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+/* Between Tablet and Desktop */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .headerContent {
+    height: 75px;
+    padding: 0 32px;
+  }
+
+  .logoImage {
+    height: 38px;
+  }
+
+  .navList {
+    gap: 2.2rem;
+  }
+
+  .demoButton {
+    padding: 0.55rem 1.35rem;
+  }
+
+  .mobileMenuButton {
+    display: none;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1201px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}

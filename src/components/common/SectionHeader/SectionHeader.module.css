@@ -1,0 +1,64 @@
+.headerArea {
+    margin-bottom: 50px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.badgeWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.centered .badgeWrapper {
+    justify-content: center;
+}
+
+.blueLine {
+    color: #084ee4;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.badgeText {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+.mainTitle {
+    font-size: 48px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -1px;
+}
+
+.blueText {
+    color: #084ee4;
+}
+
+.whiteText .mainTitle {
+    color: #ffffff;
+}
+
+.whiteText .badgeText {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+    .mainTitle {
+        font-size: 32px;
+    }
+
+    .badgeText {
+        font-size: 20px;
+    }
+
+    .blueLine {
+        font-size: 18px;
+    }
+}
