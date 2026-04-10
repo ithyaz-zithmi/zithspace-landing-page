@@ -41,9 +41,33 @@
 .pricingContainer {
   display: flex;
   gap: 30px;
-  justify-content: center;
   align-items: flex-start;
   width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #e5e7eb transparent;
+}
+
+/* Hide scrollbar for cleaner look */
+.pricingContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.pricingContainer::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.pricingContainer::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.pricingContainer::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
 }
 
 /* Base Card Style */
@@ -57,6 +81,8 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }
 
 /* Popular Card Style */
@@ -109,6 +135,9 @@
   /* ADDED: Horizontal Line Under Amount */
   border-bottom: 1px solid #e5e7eb;
   padding-bottom: 30px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
 .pricingCard.popular .priceBox {
@@ -117,10 +146,11 @@
 }
 
 .price {
-  /* INCREASED FONT SIZE */
-  font-size: 3.5rem; 
+  /* REDUCED FONT SIZE */
+  font-size: 2.5rem; 
   font-weight: 700;
   color: #1f2937;
+  margin: 0;
 }
 
 .pricingCard.popular .price {
@@ -130,6 +160,7 @@
 .duration {
   color: #6b7280;
   font-size: 1rem;
+  margin: 0;
 }
 
 .pricingCard.popular .duration {
@@ -197,9 +228,8 @@
 /* Tablet Responsive Styles */
 @media (max-width: 1024px) {
   .pricingContainer {
-    flex-wrap: wrap;
     gap: 25px;
-    justify-content: center;
+    padding: 0 20px;
   }
   
   .pricingCard {
@@ -208,7 +238,7 @@
   }
   
   .price {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
   
   .pricingCard h2 {
@@ -234,20 +264,17 @@
   }
   
   .pricingContainer {
-    flex-direction: column;
-    align-items: center;
     gap: 20px;
     padding: 0 20px;
   }
   
   .pricingCard {
-    width: 100%;
-    max-width: 350px;
+    width: 280px;
     padding: 30px 25px;
   }
   
   .price {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .pricingCard h2 {
@@ -289,14 +316,16 @@
   
   .pricingContainer {
     padding: 0 15px;
+    gap: 15px;
   }
   
   .pricingCard {
+    width: 260px;
     padding: 25px 20px;
   }
   
   .price {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   
   .pricingCard h2 {
@@ -322,4 +351,21 @@
     padding: 3px 10px;
     right: 15px;
   }
+}
+
+/* Loading and Error States */
+.loadingState,
+.errorState {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1rem;
+  color: #6b7280;
+  width: 100%;
+}
+
+.errorState {
+  color: #dc2626;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
 }
