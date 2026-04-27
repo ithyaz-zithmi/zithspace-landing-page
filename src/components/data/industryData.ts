@@ -1,6 +1,6 @@
-const itSoftwareImg = "/images/IT-Company.jpg";
-const constructionImg = "/images/recruitment.jpg";
-const enterpriseImg = "/images/enterprise.webp";
+const itSoftwareImg = "/images/it-software.png";
+const freelanceImg = "/images/freelance.png";
+const enterpriseImg = "/images/enterprise.png";
 
 export const industryData = [
   {
@@ -12,10 +12,10 @@ export const industryData = [
   },
   {
     id: 4,
-    title: "It Recruitments",
+    title: "Freelance",
     description:
-      "Track projects, manage site attendance, monitor expenses, and streamline vendor invoicing across locations.",
-    image: constructionImg,
+      "Manage client projects, track billable hours, generate professional invoices, and handle multiple income streams with ease.",
+    image: freelanceImg,
   },
   {
     id: 5,

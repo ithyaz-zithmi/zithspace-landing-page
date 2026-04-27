@@ -48,22 +48,32 @@ async function sendDemoRequestEmail(demoRequest: DemoRequest) {
 
 // Save demo request to database
 async function saveDemoRequest(demoRequest: DemoRequest): Promise<DemoRequest> {
-  const query = `
-    INSERT INTO demo_requests (name, email, company, phone, message, status)
-    VALUES ($1, $2, $3, $4, $5, $6)
-    RETURNING id, name, email, company, phone, message, status, created_at, updated_at
-  `;
-  
-  const values = [
-    demoRequest.name,
-    demoRequest.email,
-    demoRequest.company || null,
-    demoRequest.phone || null,
-    demoRequest.message || null,
-    'pending'
-  ];
-
   try {
+    // Get default status from status_configs table
+    const defaultStatusResponse = await pool.query(
+      'SELECT name FROM status_configs WHERE is_default = true LIMIT 1'
+    );
+    
+    // Use default status if exists, otherwise use empty string
+    const defaultStatus = defaultStatusResponse.rows.length > 0 
+      ? defaultStatusResponse.rows[0].name 
+      : '';
+
+    const query = `
+      INSERT INTO demo_requests (name, email, company, phone, message, status)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      RETURNING id, name, email, company, phone, message, status, created_at, updated_at
+    `;
+    
+    const values = [
+      demoRequest.name,
+      demoRequest.email,
+      demoRequest.company || null,
+      demoRequest.phone || null,
+      demoRequest.message || null,
+      defaultStatus
+    ];
+
     const result = await pool.query(query, values);
     return result.rows[0];
   } catch (error) {

@@ -6,7 +6,7 @@ import pool from '@/lib/db';
 async function getPricingDataFromDatabase(): Promise<PriceSetting[]> {
   try {
     const query = `
-      SELECT id, title, subtitle, amount_type, amount, points, status, created_at, updated_at 
+      SELECT id, type, title, subtitle, amount_type, monthly_amount, yearly_amount, points, button_text, status, created_at, updated_at 
       FROM price_settings 
       WHERE status = 'active' 
       ORDER BY id
@@ -16,7 +16,8 @@ async function getPricingDataFromDatabase(): Promise<PriceSetting[]> {
     return result.rows.map(row => ({
       ...row,
       points: row.points || [], // Ensure points is always an array
-      amount: parseFloat(row.amount) // Convert DECIMAL to number
+      monthly_amount: parseFloat(row.monthly_amount), // Convert DECIMAL to number
+      yearly_amount: parseFloat(row.yearly_amount) // Convert DECIMAL to number
     }));
   } catch (error) {
     console.error('Database query error:', error);
@@ -28,15 +29,17 @@ export async function GET() {
   try {
     const pricingData = await getPricingDataFromDatabase();
     
-    // Return all active pricing records without grouping
+    // Return all active pricing records with new schema fields
     const plans = pricingData.map(plan => ({
       id: plan.id,
+      type: plan.type,
       name: plan.title,
       description: plan.subtitle,
-      price: plan.amount,
+      monthly_amount: plan.monthly_amount,
+      yearly_amount: plan.yearly_amount,
       features: plan.points,
-      amount_type: plan.amount_type,
-      isPopular: plan.title.toLowerCase().includes('growth') // Mark growth plans as popular
+      buttonText: plan.button_text || 'Coming Soon....',
+      isPopular: plan.title.toLowerCase().includes('growth') || plan.type === 'Business'
     }));
 
     return NextResponse.json(plans);
