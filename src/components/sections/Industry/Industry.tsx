@@ -34,7 +34,6 @@ const Industry: React.FC = () => {
                   height={250}
                   className={styles.industryImage}
                   sizes="(max-width: 768px) 90vw, (max-width: 1200px) 33vw, 400px"
-                  style={{ width: "100%", height: "auto" }}
                 />
               </div>
               <div className={styles.cardBody}>

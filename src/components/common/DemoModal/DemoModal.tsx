@@ -39,7 +39,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/demo-request", {
+      const response = await fetch("/api/demo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose }) => {
         throw new Error(data.message || "Failed to send");
       }
 
-      toast.success("Demo request sent successfully!");
+      toast.success(data.message || "Demo request sent successfully!");
       setIsSubmitted(true);
     } catch (error: any) {
       console.error(error);

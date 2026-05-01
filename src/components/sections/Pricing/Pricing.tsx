@@ -1,57 +1,59 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Pricing.module.css";
 import { FaCheckCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 import Container from "../../common/Container/Container";
 import SectionHeader from "../../common/SectionHeader/SectionHeader";
+
+interface PricingPlan {
+  id: number;
+  type: string;
+  name: string;
+  description: string;
+  monthly_amount: number;
+  yearly_amount: number;
+  features: string[];
+  buttonText: string;
+  isPopular: boolean;
+}
 
 const Pricing: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
     "monthly",
   );
+  const [selectedCategory, setSelectedCategory] = useState<string>("Starter");
+  const [plans, setPlans] = useState<PricingPlan[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const plans = [
-    {
-      name: "Starter Plan",
-      description: "For small Teams and Company getting started",
-      price: "00.00",
-      features: [
-        "Project & Task Management",
-        "Basic HRMS (Attendance + Leave)",
-        "Role-Based Access",
-        "Basic Reports",
-        "Email Support",
-      ],
-      isPopular: false,
-    },
-    {
-      name: "Growth plan",
-      description: "For Growing teams that Need Structure",
-      price: "00.00",
-      features: [
-        "Advanced HRMS (Payroll + Shift )",
-        "Finance Module (Expenses + Invoicing)",
-        "Department-Level Dashboard",
-        "Workflow Automation",
-        "Priority Support",
-      ],
-      isPopular: true,
-    },
-    {
-      name: "Business Plan",
-      description: "For scaling companies with full operations",
-      price: "00.00",
-      features: [
-        "Complete Business Lifecycle Coverage",
-        "Custom Roles & Permissions",
-        "Advanced Analytics & Reports",
-        "API Access",
-        "Dedicated Account Manager",
-      ],
-      isPopular: false,
-    },
-  ];
+  const categories = ["Freelance", "Starter", "Business", "Enterprise"];
+
+  useEffect(() => {
+    const fetchPricingData = async () => {
+      try {
+        const response = await fetch('/api/pricing');
+        if (!response.ok) {
+          throw new Error('Failed to fetch pricing data');
+        }
+        const data = await response.json();
+        setPlans(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
+        console.error('Error fetching pricing data:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPricingData();
+  }, []);
+
+  // Filter plans based on selected category (type)
+  const displayPlans = plans.filter((plan) => {
+    return plan.type === selectedCategory;
+  });
 
   return (
     <section id="pricing" className={styles.pricingSection}>
@@ -65,6 +67,25 @@ const Pricing: React.FC = () => {
             </>
           }
         />
+
+        <div className={styles.categorySwitcher}>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`${styles.categoryBtn} ${selectedCategory === cat ? styles.active : ""}`}
+              onClick={() => setSelectedCategory(cat)}
+            >
+              {selectedCategory === cat && (
+                <motion.div
+                  layoutId="activeCategory"
+                  className={styles.activeBackground}
+                  transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                />
+              )}
+              {cat}
+            </button>
+          ))}
+        </div>
 
         <div className={styles.billingToggle}>
           <button
@@ -82,35 +103,50 @@ const Pricing: React.FC = () => {
         </div>
 
         <div className={styles.pricingContainer}>
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`${styles.pricingCard} ${plan.isPopular ? styles.popular : ""}`}
-            >
-              {plan.isPopular && (
-                <span className={styles.mostPopularTag}>Most Popular</span>
-              )}
+          {loading ? (
+            <div className={styles.loadingState}>Loading pricing plans...</div>
+          ) : error ? (
+            <div className={styles.errorState}>Error: {error}</div>
+          ) : displayPlans.length > 0 ? (
+            displayPlans.map((plan: PricingPlan, index: number) => (
+              <div
+                key={plan.id}
+                className={`${styles.pricingCard} ${plan.isPopular ? styles.popular : ""}`}
+              >
+                {plan.isPopular && (
+                  <span className={styles.mostPopularTag}>Most Popular</span>
+                )}
 
-              <h2>{plan.name}</h2>
-              <p className={styles.planDescription}>{plan.description}</p>
+                <h2>{plan.name}</h2>
+                <p className={styles.planDescription}>{plan.description}</p>
 
-              <div className={styles.priceBox}>
-                <span className={styles.price}>${plan.price}</span>
-                <span className={styles.duration}>/per month</span>
+                <div className={styles.priceBox}>
+                  <span className={styles.price}>
+                    $
+                    {billingCycle === "monthly"
+                      ? plan.monthly_amount.toFixed(2)
+                      : plan.yearly_amount.toFixed(2)}
+                  </span>
+                  <span className={styles.duration}>/per {billingCycle}</span>
+                </div>
+
+                <ul className={styles.featuresList}>
+                  {plan.features.map((feature: string, i: number) => (
+                    <li key={i}>
+                      <FaCheckCircle className={styles.checkIcon} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <button className={styles.ctaButton}>{plan.buttonText}</button>
               </div>
-
-              <ul className={styles.featuresList}>
-                {plan.features.map((feature, i) => (
-                  <li key={i}>
-                    <FaCheckCircle className={styles.checkIcon} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <button className={styles.ctaButton}>Coming Soon....</button>
+            ))
+          ) : (
+            <div className={styles.loadingState}>
+              No {selectedCategory} plans found for {billingCycle} billing.
             </div>
-          ))}
+          )}
         </div>
       </Container>
     </section>
